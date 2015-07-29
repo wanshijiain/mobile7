@@ -9,10 +9,10 @@ var app = new Framework7({
 	activeStateElemets		:	'a, button, label, span',
 	//导航与路由
 	router					:	true,
-	ajaxLinks				:   undefined,
+//	ajaxLinks				:   undefined,
 	uniqueHistory			:	false,
 	uniqueHistoryIgnoreGetParameters:false,
-	externalLinks			:	'.external',
+//	externalLinks			:	'.external',
 	animateNavBackIcon		:	true,
 	//滑动返回上一页
 	swipeBackPage			:	true,
@@ -44,6 +44,7 @@ var app = new Framework7({
 	showBarsOnPageScrollEnd	:	true,
 	//template7
 	template7Pages: true,
+	precompileTemplates: true,
 	//图片懒加载
 	imagesLazyLoadThreshold	:	0
 });
@@ -93,25 +94,83 @@ Date.prototype.weekDay = function(){
 	case 6:return '周六';
 	}
 }
-var mainView = app.addView('.view-main', {
-	  url			:	'index',
-	  dynamicNavbar	:	true,
-	  reloadPages	:	true
-});
-var orderView = app.addView('.view-order', {
-	  url			:	'order',
-	  dynamicNavbar	:	true,
-	  reloadPages	:	true
+//视图对象
+var mainView = null;
+var orderView = null;
+var accountView = null;
+try {
+	mainView = app.addView('.view-main', {
+		  url			:	'index',
+		  dynamicNavbar	:	true,
+		  reloadPages	:	true
+	});
+} catch (e) {
+	console.log(e);
+}
+try {
+	orderView = app.addView('.view-order', {
+		url			:	'order',
+		dynamicNavbar	:	true,
+		reloadPages	:	true
+	});
+} catch (e) {
+	console.log(e);
+}
+
+try {
+	accountView = app.addView('.view-account', {
+		url			:	'account',
+		dynamicNavbar	:	true,
+		reloadPages	:	true
+	});
+} catch (e) {
+	console.log(e);
+}
+//当前视图
+var currentView = mainView ? mainView : orderView ? orderView : accountView;
+
+//picker
+var date = new Date();
+var dateArr = [];
+var dateDisplayArr = [];
+var maxDayNum = 10;
+for(var i = 0 ; i < maxDayNum ; i++ ){
+	var newDate = date.addDay(i);
+	dateArr.push(newDate.Format('MM-dd'));
+	dateDisplayArr.push(newDate.Format('MM-dd') + ' ' + (i == 0 ? '今天':i == 1 ? '明天':i == 2 ? '后天':newDate.weekDay()));
+};
+var datePicker = app.picker({
+    input: 'input[name=getDate]',
+    inputReadOnly:true,
+    rotateEffect: true,
+    scrollToInput:true,
+    cols: [
+       {
+         values: dateArr,
+         displayValues:dateDisplayArr
+       },
+       {
+    	   values: '08:00~08:30 08:30~09:00 09:00~09:30 09:30~10:00 10:00~10:30 10:30~11:00 11:00~11:30 11:30~12:00'.split(' ')
+       }
+     ],
+     toolbarCloseText:'完成',
+     toolbarTemplate:'<div class="toolbar">'+
+			    	  '<div class="toolbar-inner">'+
+					     '<div class="left"></div>'+
+					     '<div class="right">'+
+					       '<a href="#" class="link close-picker">{{closeText}}</a>'+
+					     '</div>'+
+					   '</div>'+
+					 '</div> ',
+     onClose:function(p){
+    	 $('input[name=getDate]').val(p.value[0]+' '+p.value[1]);
+     }
 });
 //全局跳转
-$(document).on('click', '.view-change', function(){
-	if($(this).hasClass('view-order')){
-		mainView.router.load({
-			url:'/order/order.html',
-			view:'.view-order',
-			context:{
-				inservices:[{getDate:'2012-12-12', orderId:'sdada', orderAmount:123.5}]
-			}
-		});
-	}
+$(document).on('click', 'input[name=getDate]', function(){
+	datePicker.open();
+}).on('click','.receivePeople', function(){
+	currentView.router.loadPage('/common/order/receivePeople.html');
+}).on('click','.addReceiver', function(){
+	currentView.router.loadPage('/common/order/addReceiver.html');
 });

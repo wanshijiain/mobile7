@@ -36,16 +36,15 @@ i.demo-icon-4 {
 .pull-right {
   float: right !important;
 }
-.navbar, .picker-modal .toolbar, .close-picker, .button.active, .button.button-big.button-fill{
+.navbar, .picker-modal .toolbar, .close-picker, .button.button-big.button-fill{
 	background-color: rgb(0, 204, 203);
 	color: #FFF;
 	border:none;
 }
-.button{
-	border:1px solid rgb(0, 204, 203);
-	color: rgb(0, 204, 203);
+.theme-white .button:not(.button-fill).active{
+	background-color: #fff;
+  	color: rgb(0, 204, 203);
 }
-
 .button-index{
 	margin:0 auto;
 	width:120px;
@@ -58,6 +57,31 @@ i.demo-icon-4 {
 .deals span{
    line-height: 200%;
 }
+.place-center{
+	margin: 0 auto;
+	display: block;
+}
+.account-option{
+	width:72%;
+	line-height: 45px;
+}
+.text-center{
+	text-align:center;
+}
+.head{
+	background-color:#01E0DF; 
+	padding: 3%; 
+	width: 100%;
+}
+.headPic{
+	width:100px; 
+	height:100px; 
+	border-radius:50%; 
+	overflow:hidden;
+}
+.font-small{
+	font-size: 10px;
+}
 .deals .left-deal{
 	text-align: left;
 	padding-right: 10%;
@@ -67,6 +91,7 @@ i.demo-icon-4 {
 	text-align: left;
 	border-left:1px solid gray;
 }
-.button-small{
-	
+.button.button-small.button-pay,.button.button-small.order-cancel{
+	border:1px solid rgb(0, 204, 203);
+	color: rgb(0, 204, 203);
 }

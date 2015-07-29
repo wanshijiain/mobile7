@@ -10,25 +10,23 @@
 <!-- Your app title -->
 <title>懒到家</title>
 <link rel="stylesheet" href="http://framework7.taobao.org/dist/css/framework7.min.css">
-<link rel="stylesheet" href="../common/context/ctx.css">
+<link rel="stylesheet" href="/common/context/ctx.css">
 </head>
 <body>
 	<div class="statusbar-overlay"></div>
 	<!-- Views -->
-	<div class="views">
-		<div class="view view-main">
+	<div class="views tabs toolbar-fixed">
+		<div class="view view-main" id="mainView">
 			<div class="pages navbar-fixed toolbar-through tabbar-labels-through">
-				<div data-page="index" class="page" id="index">
+				<div data-page="index" class="page">
 					<div class="navbar">
 						<div class="navbar-inner">
-							<div class="center sliding">懒到家</div>
+							<div class="center sliding">你大爷</div>
 						</div>
 					</div>
 					<div class="page-content">
 						<div class="swiper-container swiper-index">
-						    <!-- Slides wrapper -->
 						    <div class="swiper-wrapper">
-						        <!-- Slides -->
 						        <div class="swiper-slide"><img src="../img/banners/banner.png" width="100%"/></div>
 						        <div class="swiper-slide"><img src="../img/banners/banner.png" width="100%"/></div>
 						        <div class="swiper-slide"><img src="../img/banners/banner.png" width="100%"/></div>
@@ -74,32 +72,28 @@
 					</div>
 				</div>
 			</div>
-			<!-- Bottom Toolbar-->
-			<div class="toolbar tabbar tabbar-labels">
-			    <div class="toolbar-inner">
-			        <a href="#"  class="tab-link active view-change view-index">
-			            <i class="icon demo-icon-1"></i>
-			            <span class="tabbar-label">首页</span>
-			        </a>
-			        <a href="/order/order.html" class="tab-link view-change view-order" data-view=".view-order">
-			            <i class="icon demo-icon-2">
-			                <span class="badge bg-red">5</span>
-			            </i>
-			            <span class="tabbar-label">订单</span>
-			        </a>
-			        <a href="#" class="tab-link view-change view-account">
-			            <i class="icon demo-icon-3"></i>
-			            <span class="tabbar-label">我的</span>
-			        </a>
-			    </div>
-			</div>
 		</div>
+	  	<div class="toolbar tabbar tabbar-labels">
+		    <div class="toolbar-inner">
+		      <a href="/index/index.html" class="tab-link active">
+		      	<i class="icon demo-icon-1"></i>
+		      	<span class="tabbar-label">首页</span>
+		      </a>
+		      <a href="/order/order.html" class="tab-link with-animation" >
+		      	<i class="icon demo-icon-2"></i>
+		      	<span class="tabbar-label">订单</span>
+		      </a>
+		      <a href="/account/account.html" class="tab-link">
+		      	<i class="icon demo-icon-3"></i>
+		      	<span class="tabbar-label">我的</span>
+		      </a>
+		    </div>
+	  	</div>
 	</div>
 	<!-- Path to Framework7 Library JS-->
 	<script type="text/javascript" src="http://framework7.taobao.org/dist/js/framework7.min.js"></script>
 	<!-- Path to your app js-->
 	<script type="text/javascript" src="../common/context/ctx.js"></script>
 	<script type="text/javascript" src="../script/index.js"></script>
-	<script type="text/javascript" src="../script/order.js"></script>
 </body>
 </html>

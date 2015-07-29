@@ -13,10 +13,6 @@ var functionsSwiper = app.swiper('.swiper-functions', {
 	pagination:'.swiper-functions .swiper-pagination',
 	paginationHide:false
 });
-var mainView = app.addView('.view-main', {
-	  url			:	'index',
-	  reloadPages	:	true
-});
 //事件
 $(document).on('pageInit', function(e){
 	var page = e.detail.page;
@@ -39,10 +35,10 @@ $(document).on('pageInit', function(e){
 }).on('click', '.deals', function(){
 	app.hideToolbar('.toolbar');
 }).on('click', '.backIndex', function(){
-	mainView.router.loadPage('index.html');
+	currentView.router.loadPage('index.html');
 	app.showToolbar('.toolbar');
 }).on('click', '.order-create', function(){
-	mainView.router.load({
+	currentView.router.load({
 		url:'/common/order/create.html',
 		context:{
 			receivePeoples:[{
@@ -57,6 +53,6 @@ $(document).on('pageInit', function(e){
 		}});
 	app.hideToolbar('.toolbar');
 }).on('click', '.order-cancel', function(){
-	mainView.router.loadPage('/common/order/cancel.html');
+	currentView.router.loadPage('/common/order/cancel.html');
 	app.hideToolbar('.toolbar');
 });
