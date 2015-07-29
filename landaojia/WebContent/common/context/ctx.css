@@ -70,7 +70,7 @@ i.demo-icon-4 {
 }
 .head{
 	background-color:#01E0DF; 
-	padding: 3%; 
+    padding: 3% 3% 3% 0;
 	width: 100%;
 }
 .headPic{
