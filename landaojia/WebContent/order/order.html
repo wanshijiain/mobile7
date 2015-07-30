@@ -17,18 +17,18 @@
 	<!-- Views -->
 	<div class="views">
 		<div class="view view-order theme-white" id="orderView">
-			<div class="navbar">
-			  <div class="navbar-inner">
-			    <div class="center">
-			      <div class="buttons-row">
-			        <a href="#inService" class="tab-link active button">服务中</a>
-			        <a href="#outService" class="tab-link button">已完成</a>
-			      </div>
-			    </div>
-			  </div>
-			</div>
 			<div class="pages navbar-fixed toolbar-through tabbar-labels-through">
 				 <div class="page" data-page="order-index"  id="order" data-url="order">
+					<div class="navbar">
+					  <div class="navbar-inner">
+					    <div class="center">
+					      <div class="buttons-row">
+					        <a href="#inService" class="tab-link active button">服务中</a>
+					        <a href="#outService" class="tab-link button">已完成</a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 				    <div class="page-content">
 				      <div class="tabs-animated-wrap">
 				        <div class="tabs">
@@ -47,7 +47,7 @@
 						                      	<div class="row">
 							                      	<div class="col-65">订单编号：{{orderId}}<br>订单金额：{{orderAmount}}</div>
 							                      	<div class="col-35">
-							                      		<button class="button button-small button-pay">订单付款</button>
+							                      		<button class="button button-small button-pay" orderId="{{orderId}}">订单付款</button>
 							                      	</div>
 						                      	</div>
 						                      </div>

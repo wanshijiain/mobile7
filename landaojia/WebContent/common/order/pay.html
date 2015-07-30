@@ -1,0 +1,68 @@
+<div data-page="order-pay" class="page">
+	<div class="navbar">
+		<div class="navbar-inner">
+		    <div class="navbar-inner">
+		        <div class="left">
+		            <a href="/order/order.html" class="link icon-only back backIndex with-animation">
+		                <i class="icon icon-back"></i>
+		            </a>
+		        </div>
+		        <div class="center sliding">订单付款</div>
+		    </div>
+		</div>
+	</div>
+	<div class="page-content">
+		<div class="list-block">
+		  <ul>
+	        <li>
+				<div class="item-content">
+                   <div class="item-inner">
+                     <div class="item-title">订单编号</div>
+                     <div class="item-after">{{orderId}}</div>
+                     <input name="orderId" type="hidden" value="{{orderId}}">
+                   </div>
+                </div>
+        	</li>
+	        <li>
+				<div class="item-content">
+                   <div class="item-inner">
+                     <div class="item-title">订单金额</div>
+                     <div class="item-after">{{orderAmount}}</div>
+                     <input name="orderAmount" type="hidden" value="{{orderAmount}}">
+                   </div>
+                </div>
+        	</li>
+	        <li>
+				<div class="item-content">
+                   <div class="item-inner">
+                     <div class="item-title">账户余额</div>
+                     <div class="item-after">{{accountBalance}}</div>
+                     <input name="accountBalance" type="hidden" value="{{accountBalance}}">
+                   </div>
+                </div>
+        	</li>
+	        <li>
+				<a href="#" class="item-link item-content">
+                   <div class="item-inner">
+                     <div class="item-title">红包优惠券</div>
+                     <div class="item-after">{{couponAmount}}</div>
+                     <input name="couponAmount" type="hidden" value="{{couponAmount}}">
+                   </div>
+                </a>
+        	</li>
+	        <li>
+				<div class="item-content">
+                   <div class="item-inner">
+                     <div class="item-title">还需支付</div>
+                     <div class="item-after">{{needAmount}}</div>
+                     <input name="needAmount" type="hidden" value="{{needAmount}}">
+                   </div>
+                </div>
+        	</li>
+		  </ul>
+		</div>
+		<div class="content-block">
+        	<p><a href="#" class="button button-big button-fill">确认支付</a></p>
+        </div>
+	</div>
+</div>

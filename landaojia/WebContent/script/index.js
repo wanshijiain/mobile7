@@ -35,24 +35,19 @@ $(document).on('pageInit', function(e){
 }).on('click', '.deals', function(){
 	app.hideToolbar('.toolbar');
 }).on('click', '.backIndex', function(){
-	currentView.router.loadPage('index.html');
-	app.showToolbar('.toolbar');
+	turnBackIndex();
 }).on('click', '.order-create', function(){
-	currentView.router.load({
-		url:'/common/order/create.html',
-		context:{
-			receivePeoples:[{
-				name:'李大爷',
-				phone:'31312121',
-				address:'上海市浦东新区'
-			},{
-				name:'李二爷',
-				phone:'1231312121',
-				address:'上海市浦东新区'
-			}]
-		}});
-	app.hideToolbar('.toolbar');
+	toPage('/common/order/create.html',null, {
+		receivePeoples:[{
+			name:'李大爷',
+			phone:'31312121',
+			address:'上海市浦东新区'
+		},{
+			name:'李二爷',
+			phone:'1231312121',
+			address:'上海市浦东新区'
+		}]
+	});
 }).on('click', '.order-cancel', function(){
-	currentView.router.loadPage('/common/order/cancel.html');
-	app.hideToolbar('.toolbar');
+	toPage('/common/order/cancel.html', null, null);
 });

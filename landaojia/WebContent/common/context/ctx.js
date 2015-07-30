@@ -174,3 +174,24 @@ $(document).on('click', 'input[name=getDate]', function(){
 }).on('click','.addReceiver', function(){
 	currentView.router.loadPage('/common/order/addReceiver.html');
 });
+//页面跳转基准方法
+var toPage = function(url, query, context, showToolbar){
+	showToolbar == showToolbar ? showToolbar:false;
+	if(!url) return;
+	currentView.router.load({
+		url:url,
+		query:query,
+		context:context
+	});
+	//toolbar控制
+	if(showToolbar){
+		app.showToolbar('.toolbar');
+	} else {
+		app.hideToolbar('.toolbar');
+	}
+}
+//回到当前view的主窗口
+var turnBackIndex = function(){
+	currentView.router.loadPage(currentView.url);
+	app.showToolbar('.toolbar');
+}

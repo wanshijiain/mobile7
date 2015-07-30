@@ -32,4 +32,16 @@ $(document).on('pageInit', function(e){
 			}]			
 		}))
 	}
+}).on('click', '.button-pay', function(){
+	var orderId = $(this).attr('orderId');
+	toPage('/common/order/pay.html', null, {
+		orderId:orderId,
+		orderAmount:12120,
+		accountBalance:12313.213,
+		couponId:'23232',
+		couponAmount:123.21,
+		needAmount:1231
+	});
+}).on('click', '.backIndex', function(){
+	turnBackIndex();
 }).trigger('pageInit');
