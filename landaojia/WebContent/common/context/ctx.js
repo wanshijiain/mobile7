@@ -192,6 +192,9 @@ var toPage = function(url, query, context, showToolbar){
 }
 //回到当前view的主窗口
 var turnBackIndex = function(){
-	currentView.router.loadPage(currentView.url);
+	var indexUrl = '/index/index.html';
+	var orderUrl = '/order/order.html';
+	var accountUrl = '/account/account.html';
+	currentView.router.loadPage(currentView.selector == '.view-account' ? accountUrl:currentView.selector == '.view-order' ? orderUrl:indexUrl);
 	app.showToolbar('.toolbar');
 }
