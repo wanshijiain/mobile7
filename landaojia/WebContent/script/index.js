@@ -51,3 +51,5 @@ $(document).on('pageInit', function(e){
 }).on('click', '.order-cancel', function(){
 	toPage('/common/order/cancel.html', null, null);
 });
+app.loginScreen();
+setTimeout(function(){app.closeModal('.login-screen')},3000)

@@ -25,7 +25,8 @@ var options = {
 		  'bgcolor': '#0da6ec',
 		  'fontcolor': '#fff'
 };
-var welcomescreen = app.welcomescreen(welcomescreen_slides, options);
+
+/*var welcomescreen = app.welcomescreen(welcomescreen_slides, options);
 $(document).on('click', '#tutorial-close-btn, .welcomescreen-closebtn', function () {
     welcomescreen.close();
-});
+});*/

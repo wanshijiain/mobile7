@@ -19,11 +19,11 @@
 	<!-- Views -->
 	<div class="views">
 		<div class="view view-main" id="mainView">
-			<div class="pages navbar-fixed toolbar-through tabbar-labels-through">
+			<div class="pages navbar-fixed toolbar-through tabbar-labels-through theme-green">
 				<div data-page="index" class="page">
 					<div class="navbar">
 						<div class="navbar-inner">
-							<div class="center sliding">你大爷</div>
+							<div class="center sliding">懒到家</div>
 						</div>
 					</div>
 					<div class="page-content">
@@ -92,6 +92,47 @@
 		  	</div>
 		</div>
 	</div>
+	<!-- 登陆画面 -->
+  	<div class="login-screen">
+      <div class="view">
+        <div class="page">
+          <!-- page-content has additional login-screen content -->
+          <div class="page-content login-screen-content" style="background-color: rgb(0, 204, 203);color: white;">
+            <div class="login-screen-title">懒到家</div>
+            <form>
+              <div class="list-block">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">手机号</div>
+                      <div class="item-input">
+                        <input type="text" name="phone" placeholder="输入手机号">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">短信校验码</div>
+                      <div class="item-input">
+                        <input type="text" name="verifyCode" placeholder="输入短信校验码">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <a href="#" class="item-link list-button">登录</a>
+                  </li>
+                </ul>
+                <div class="list-block-labe">Some text with login information.</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  	</div>
 	<!-- Path to Framework7 Library JS-->
 	<script type="text/javascript" src="http://framework7.taobao.org/dist/js/framework7.min.js"></script>
 	<!-- plugin js-->

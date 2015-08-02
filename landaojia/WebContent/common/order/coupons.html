@@ -1,0 +1,43 @@
+
+ <div class="page" data-page="common-coupons">
+	<div class="navbar">
+		<div class="navbar-inner">
+		    <div class="navbar-inner">
+		        <div class="left">
+		            <a href="#" class="link icon-only back backIndex with-animation">
+		                <i class="icon icon-back"></i>
+		            </a>
+		        </div>
+		        <div class="center sliding">红包优惠券</div>
+		        <div class="right">
+		            <a href="#" class="link with-animation">
+		            	使用规则
+		            </a>
+		        </div>
+		    </div>
+		</div>
+	</div> 
+    <div class="page-content">
+		<div class="list-block cards-list">
+         <ul>
+         	{{#each couponses}}
+           <li class="card">
+             <div class="card-content">
+               <div class="card-content-inner row no-gutter">
+               	<div class="col-35">
+               		<h1>￥{{amount}}</h1><br>
+               		有效期至<br>
+               		{{endTime}}
+               	</div>
+               	<div class="col-50" style="border-left:red 1px dashed;height: 130px;padding: 5%;">
+               		{{type}}-{{source}}<br>
+               		{{rule}}
+               	</div>
+               </div>
+             </div>
+           </li>
+           {{/each}}
+         </ul>
+       </div>						
+	</div>
+ </div>
